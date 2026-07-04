@@ -47,32 +47,30 @@
 % --------------------------------------------------
 % Цвета
 % --------------------------------------------------
-\definecolor{mainblue}{HTML}{1F4E79}
-\definecolor{lightblue}{HTML}{EAF2F8}
-\definecolor{darkgray}{HTML}{333333}
+% В отчёте используется один цвет текста: чёрный.
+% Цветовые акценты убраны, чтобы PDF выглядел как обычный академический/портфолио-отчёт.
+\definecolor{maintext}{HTML}{000000}
 \definecolor{codebg}{HTML}{F5F5F5}
 
 % --------------------------------------------------
 % Гиперссылки
 % --------------------------------------------------
 \hypersetup{
-    colorlinks=true,
-    linkcolor=mainblue,
-    urlcolor=mainblue,
-    citecolor=mainblue
+    colorlinks=false,
+    hidelinks=true
 }
 
 % --------------------------------------------------
 % Заголовки
 % --------------------------------------------------
 \titleformat{\section}
-{\Large\bfseries\color{mainblue}}
+{\Large\bfseries\color{black}}
 {\thesection.}
 {0.5em}
 {}
 
 \titleformat{\subsection}
-{\large\bfseries\color{darkgray}}
+{\large\bfseries\color{black}}
 {\thesubsection.}
 {0.5em}
 {}
@@ -92,13 +90,13 @@
 % --------------------------------------------------
 \lstdefinestyle{sqlstyle}{
     backgroundcolor=\color{codebg},
-    basicstyle=\ttfamily\small,
+    basicstyle=\ttfamily\small\color{black},
     breaklines=true,
     frame=single,
-    rulecolor=\color{lightblue},
-    keywordstyle=\color{mainblue}\bfseries,
-    commentstyle=\color{gray},
-    stringstyle=\color{darkgray},
+    rulecolor=\color{black},
+    keywordstyle=\color{black}\bfseries,
+    commentstyle=\color{black},
+    stringstyle=\color{black},
     showstringspaces=false
 }
 
@@ -128,34 +126,41 @@
 }
 
 \begin{document}
+\color{black}
 
 % --------------------------------------------------
 % Титульная страница
 % --------------------------------------------------
 \begin{titlepage}
+    \thispagestyle{empty}
     \centering
 
-    \vspace*{2cm}
+    \vspace*{2.5cm}
 
-    {\Huge\bfseries\color{mainblue} Food Delivery Product \& Courier Analytics \par}
+    {\Large\bfseries Аналитический отчёт \par}
 
     \vspace{0.8cm}
 
-    {\Large Аналитический проект по данным сервиса доставки еды \par}
+    {\huge\bfseries Food Delivery Product \& Courier Analytics \par}
 
-    \vspace{1.5cm}
+    \vspace{0.6cm}
 
-        \centering
-        \large
-        SQL-анализ продуктовых метрик, эффективности доставки, повторных заказов и удержания пользователей.
+    {\large Анализ продуктовых метрик, доставки, курьеров и удержания пользователей \par}
+
+    \vspace{2cm}
+
+    \begin{minipage}{0.78\textwidth}
+        \normalsize
+        В проекте рассмотрены пользовательская активность и операционная эффективность сервиса доставки еды. Основной фокус анализа: успешность доставки, время выполнения заказов, нагрузка на курьеров, повторные заказы и retention после первого заказа.
+    \end{minipage}
 
     \vfill
 
     \begin{flushleft}
-        \large
+        \normalsize
         \textbf{Автор:} Затравин Матвей \\
-        \textbf{Инструменты:} SQL, SQLite, DBeaver, Python, Matplotlib \\
-        \textbf{Тип проекта:} Проект в портфолио для позиции продуктовый аналитик \\
+        \textbf{Инструменты:} SQL, SQLite, DBeaver, Python, Pandas, Matplotlib, SciPy, Statsmodels \\
+        \textbf{Тип проекта:} портфолио-проект для позиции продуктового аналитика \\
         \textbf{Год:} 2026
     \end{flushleft}
 
