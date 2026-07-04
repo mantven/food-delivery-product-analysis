@@ -11,10 +11,8 @@ EXPORTS_DIR = BASE_DIR / "exports"
 
 df = pd.read_csv(EXPORTS_DIR / "courier_level_profile_filtered.csv")
 
-# На всякий случай чистим названия колонок
 df.columns = [col.strip() for col in df.columns]
 
-# Преобразуем числа, если DBeaver выгрузил запятые
 for col in ["delivered_orders", "avg_delivery_time_minutes"]:
     df[col] = (
         df[col]
@@ -32,9 +30,7 @@ print(df.head())
 print()
 
 
-# --------------------------------------------------
-# 1. Описательная статистика по полу
-# --------------------------------------------------
+# Описательная статистика по полу
 
 print("Среднее время доставки по полу:")
 sex_stats = (
@@ -53,9 +49,7 @@ print(sex_stats)
 print()
 
 
-# --------------------------------------------------
-# 2. Welch t-test для сравнения пола
-# --------------------------------------------------
+# Welch t-test для сравнения пола
 
 female = df.loc[df["sex"] == "female", "avg_delivery_time_minutes"]
 male = df.loc[df["sex"] == "male", "avg_delivery_time_minutes"]
@@ -85,9 +79,7 @@ print(f"Cohen's d:      {d:.4f}")
 print()
 
 
-# --------------------------------------------------
-# 3. ANOVA по возрастным группам
-# --------------------------------------------------
+# ANOVA по возрастным группам
 
 print("Среднее время доставки по возрастным группам:")
 age_stats = (
@@ -115,11 +107,6 @@ print("One-way ANOVA по возрастным группам:")
 print(f"F-statistic: {f_stat:.4f}")
 print(f"p-value:     {age_p_value:.6f}")
 print()
-
-
-# --------------------------------------------------
-# 4. Размер эффекта для возраста: eta squared
-# --------------------------------------------------
 
 grand_mean = df["avg_delivery_time_minutes"].mean()
 
