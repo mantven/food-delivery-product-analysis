@@ -1,0 +1,9 @@
+"sex","age_group","active_couriers","delivered_orders","avg_delivery_time_minutes"
+female,"18-24",118,2319,19.97
+female,"25-34",876,17723,19.92
+female,"35-44",128,2643,19.94
+female,"45+",10,180,19.88
+male,"18-24",165,3203,19.99
+male,"25-34",1294,26228,19.98
+male,"35-44",172,3664,19.93
+male,"45+",19,447,19.98

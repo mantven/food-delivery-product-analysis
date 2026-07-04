@@ -1,0 +1,3 @@
+"sex","active_couriers","delivered_orders","avg_delivery_time_minutes","min_delivery_time_minutes","max_delivery_time_minutes"
+female,1136,22928,19.93,1.0,31.0
+male,1652,33586,19.97,1.0,32.0

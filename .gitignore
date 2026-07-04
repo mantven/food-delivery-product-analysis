@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# SQLite / local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# LaTeX temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Raw data
+data/
+raw_data/
+*.zip
