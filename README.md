@@ -14,8 +14,6 @@ SQL/Python project analyzing product metrics, courier performance, user retentio
 - Python
 - Pandas
 - Matplotlib
-- SciPy
-- Statsmodels
 
 ## Key results
 
