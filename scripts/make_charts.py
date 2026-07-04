@@ -5,10 +5,6 @@ import matplotlib.pyplot as plt
 
 
 def find_base_dir() -> Path:
-    """
-    Ищет корневую папку проекта.
-    Скрипт можно запускать как из корня проекта, так и из папки scripts.
-    """
     script_dir = Path(__file__).resolve().parent
     candidates = [
         Path.cwd(),
@@ -31,10 +27,6 @@ IMAGES_DIR.mkdir(exist_ok=True)
 
 
 def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Очищает названия колонок и пытается корректно преобразовать числа.
-    Полезно, если DBeaver выгрузил числа с запятой вместо точки.
-    """
     df.columns = [col.strip().replace('"', "") for col in df.columns]
 
     for col in df.columns:
