@@ -5,10 +5,6 @@ import matplotlib.pyplot as plt
 
 
 def find_base_dir() -> Path:
-    """
-    Ищет корневую папку проекта.
-    Скрипт можно запускать как из корня проекта, так и из папки scripts.
-    """
     script_dir = Path(__file__).resolve().parent
 
     candidates = [
@@ -32,10 +28,6 @@ IMAGES_DIR.mkdir(exist_ok=True)
 
 
 def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Чистит названия колонок и преобразует числа.
-    Нужно, если DBeaver выгрузил десятичные числа через запятую.
-    """
     df.columns = [col.strip().replace('"', "") for col in df.columns]
 
     for col in df.columns:
@@ -258,7 +250,7 @@ def main() -> None:
     plot_avg_delivery_time_by_age_group()
     plot_avg_delivery_time_by_sex_age_group()
 
-    print("Готово. Все графики сохранены в папку images.")
+    print("Все графики сохранены в папку images.")
 
 
 if __name__ == "__main__":
